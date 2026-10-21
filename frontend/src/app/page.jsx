@@ -1,9 +1,5 @@
-import styles from './page.module.css';
+import CatalogoTenis from '@/components/catalogo';
 
 export default function Home() {
-  return (
-    <main className={styles.main} id="catalogo">
-      <h1>Catálogo de tênis</h1>
-    </main>
-  );
+  return <CatalogoTenis />;
 }
