@@ -1,4 +1,20 @@
 import tenis from '../data/tenis.js';
+import { unlinkSync } from 'node:fs';
+
+function removerImagemRecebida(req) {
+  if (!req.file?.path) return;
+
+  try {
+    unlinkSync(req.file.path);
+  } catch (erro) {
+    console.error('Não foi possível remover a imagem após a falha:', erro.message);
+  }
+}
+
+function ehNumero(dado) {
+  if (typeof dado === 'number') return Number.isFinite(dado);
+  return typeof dado === 'string' && dado.trim() !== '' && Number.isFinite(Number(dado));
+}
 
 function validarDados(dados) {
   const camposObrigatorios = ['nome', 'marca', 'cor'];
@@ -10,11 +26,11 @@ function validarDados(dados) {
     return `Preencha os campos: ${faltando.join(', ')}.`;
   }
 
-  if (typeof dados.preco !== 'number' || !Number.isFinite(dados.preco) || dados.preco < 0) {
+  if (!ehNumero(dados.preco) || Number(dados.preco) < 0) {
     return 'O preço deve ser um número maior ou igual a zero.';
   }
 
-  if (!Number.isInteger(dados.quantidade) || dados.quantidade < 0) {
+  if (!ehNumero(dados.quantidade) || !Number.isInteger(Number(dados.quantidade)) || Number(dados.quantidade) < 0) {
     return 'A quantidade deve ser um número inteiro maior ou igual a zero.';
   }
 
@@ -46,16 +62,19 @@ export function buscar(req, res) {
 
 export function criar(req, res) {
   const erro = validarDados(req.body ?? {});
-  if (erro) return res.status(400).json({ sucesso: false, erro });
+  if (erro) {
+    removerImagemRecebida(req);
+    return res.status(400).json({ sucesso: false, erro });
+  }
 
   const novo = {
     id: tenis.length ? Math.max(...tenis.map((item) => item.id)) + 1 : 1,
     nome: req.body.nome.trim(),
     marca: req.body.marca.trim(),
     cor: req.body.cor.trim(),
-    preco: req.body.preco,
-    quantidade: req.body.quantidade,
-    imagem: req.body.imagem?.trim() ?? '',
+    preco: Number(req.body.preco),
+    quantidade: Number(req.body.quantidade),
+    imagem: req.file ? `/images/${req.file.filename}` : req.body.imagem?.trim() ?? '',
   };
 
   tenis.push(novo);
@@ -77,8 +96,8 @@ export function atualizar(req, res) {
     nome: req.body.nome.trim(),
     marca: req.body.marca.trim(),
     cor: req.body.cor.trim(),
-    preco: req.body.preco,
-    quantidade: req.body.quantidade,
+    preco: Number(req.body.preco),
+    quantidade: Number(req.body.quantidade),
     imagem: req.body.imagem?.trim() ?? '',
   };
 

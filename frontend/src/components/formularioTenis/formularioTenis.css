@@ -1,0 +1,119 @@
+.formularioConteudo {
+  width: min(100%, 820px);
+}
+
+.formularioMarca {
+  margin: 0 0 6px;
+  color: #ff4f00;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.formularioTitulo {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.formularioDescricao {
+  margin: 10px 0 26px;
+  color: #111111;
+}
+
+.formularioCartao {
+  padding: 24px;
+  border: 1px solid #111111;
+  background: #ffffff;
+}
+
+.formularioCartao .form-label {
+  margin-bottom: 6px;
+  color: #111111;
+  font-weight: 700;
+}
+
+.formularioCartao .form-control {
+  min-height: 44px;
+  border: 1px solid #111111;
+  border-radius: 0;
+}
+
+.formularioCartao .form-control:focus {
+  border-color: #ff4f00;
+  box-shadow: 0 0 0 0.2rem rgb(255 79 0 / 20%);
+}
+
+.formularioErro,
+.formularioSucesso {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border: 1px solid #111111;
+  color: #111111;
+}
+
+.formularioErro {
+  border-left: 4px solid #ff4f00;
+}
+
+.formularioSucesso {
+  border-left: 4px solid #111111;
+}
+
+.formularioSucesso a {
+  color: #111111;
+  font-weight: 700;
+  text-decoration-color: #ff4f00;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.formularioBotoes {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.formularioEnviar {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background: #ff4f00;
+  color: #111111;
+  font-weight: 750;
+}
+
+.formularioEnviar:hover:not(:disabled) {
+  background: #111111;
+  color: #ffffff;
+}
+
+.formularioEnviar:focus-visible,
+.formularioCancelar:focus-visible {
+  outline: 2px solid #ff4f00;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.formularioCancelar {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+@media (max-width: 575px) {
+  .formularioCartao {
+    padding: 18px;
+  }
+
+  .formularioBotoes > * {
+    width: 100%;
+  }
+}

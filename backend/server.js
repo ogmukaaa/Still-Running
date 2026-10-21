@@ -25,6 +25,14 @@ app.use((_req, res) => {
 });
 
 app.use((erro, _req, res, _next) => {
+  if (erro.code === 'LIMIT_FILE_SIZE') {
+    return res.status(400).json({ sucesso: false, erro: 'A imagem deve ter no máximo 5 MB.' });
+  }
+
+  if (erro.status === 400) {
+    return res.status(400).json({ sucesso: false, erro: erro.message });
+  }
+
   console.error(erro);
   res.status(500).json({ sucesso: false, erro: 'Erro interno do servidor.' });
 });
