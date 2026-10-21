@@ -6,8 +6,8 @@ const router = Router();
 
 router.get('/', listar);
 router.get('/:id', buscar);
-router.post('/', uploadImagem.single('imagem'), criar);
-router.put('/:id', atualizar);
+router.post('/', uploadImagem, criar);
+router.put('/:id', uploadImagem, atualizar);
 router.delete('/:id', remover);
 
 export default router;

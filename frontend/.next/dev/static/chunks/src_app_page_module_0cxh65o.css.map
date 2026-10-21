@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/samue/OneDrive/Documentos/ATV_PFEND1_INDIVIDUAL/frontend/src/app/page.module.css"],"sourcesContent":[".main {\n  width: min(100% - 48px, 1200px);\n  flex: 1;\n  margin: 0 auto;\n  padding: 48px 0;\n}\n\n.main h1 {\n  margin: 0;\n  font-size: clamp(2rem, 4vw, 2.75rem);\n  font-weight: 800;\n  letter-spacing: -0.045em;\n}\n\n@media (max-width: 560px) {\n  .main {\n    width: min(100% - 32px, 1200px);\n    padding: 36px 0;\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;AAOA;;;;;;;AAOA;EACE"}}]
-}

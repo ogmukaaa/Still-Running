@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/samue/OneDrive/Documentos/ATV_PFEND1_INDIVIDUAL/frontend/src/app/favicon.ico.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0IAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/samue/OneDrive/Documentos/ATV_PFEND1_INDIVIDUAL/frontend/src/app/page.jsx"],"sourcesContent":["import styles from './page.module.css';\r\n\r\nexport default function Home() {\r\n  return (\r\n    <main className={styles.main} id=\"catalogo\">\r\n      <h1>Catálogo de tênis</h1>\r\n    </main>\r\n  );\r\n}\r\n"],"names":["Home","className","main","id"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACtB,qBACE,8OAAC;QAAKC,WAAW,yIAAM,CAACC,IAAI;QAAEC,IAAG;kBAC/B,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAGV"}},
-    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/page.module.css [app-rsc] (css module)"],"sourcesContent":["__turbopack_context__.v({\n  \"main\": \"page-module___8aEwW__main\",\n});\n"],"names":[],"mappings":"AAAA;AACA;AACA"}}]
-}
