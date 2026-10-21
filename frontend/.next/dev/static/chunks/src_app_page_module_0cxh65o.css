@@ -1,5 +1,6 @@
 /* [project]/src/app/page.module.css [app-client] (css) */
 .page-module___8aEwW__main {
+  flex: 1;
   width: min(100% - 48px, 1200px);
   margin: 0 auto;
   padding: 48px 0;
