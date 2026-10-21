@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import './cardTenis.css';
 
 const formatarPreco = new Intl.NumberFormat('pt-BR', {
@@ -6,7 +7,7 @@ const formatarPreco = new Intl.NumberFormat('pt-BR', {
   currency: 'BRL',
 });
 
-export default function CardTenis({ tenis }) {
+export default function CardTenis({ tenis, aoExcluir, removendo = false }) {
   const textoAlternativo = `Tênis ${tenis.nome}, cor ${tenis.cor}`;
 
   return (
@@ -35,6 +36,24 @@ export default function CardTenis({ tenis }) {
           <p className="cartaoTenisQuantidade">
             {tenis.quantidade} {tenis.quantidade === 1 ? 'unidade' : 'unidades'}
           </p>
+        </div>
+        <div className="cartaoTenisAcoes">
+          <Link
+            className="btn cartaoTenisEditar"
+            href={`/tenis/${tenis.id}/editar`}
+            aria-label={`Editar ${tenis.nome}`}
+          >
+            Editar
+          </Link>
+          <button
+            className="btn cartaoTenisExcluir"
+            type="button"
+            onClick={() => aoExcluir(tenis)}
+            disabled={removendo}
+            aria-label={`Excluir ${tenis.nome}`}
+          >
+            {removendo ? 'Excluindo...' : 'Excluir'}
+          </button>
         </div>
       </div>
     </article>
