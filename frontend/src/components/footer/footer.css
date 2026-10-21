@@ -1,10 +1,10 @@
-.footer {
+.rodape {
   width: 100%;
   border-top: 1px solid #111111;
   background: #ffffff;
 }
 
-.inner {
+.rodapeInterno {
   width: min(100% - 48px, 1200px);
   min-height: 92px;
   margin: 0 auto;
@@ -14,13 +14,13 @@
   gap: 24px;
 }
 
-.brandBlock {
+.rodapeMarca {
   display: flex;
   align-items: baseline;
   gap: 16px;
 }
 
-.logo {
+.rodapeLogo {
   color: #ff4f00;
   font-size: 1rem;
   font-weight: 900;
@@ -29,13 +29,7 @@
   white-space: nowrap;
 }
 
-.description {
-  margin: 0;
-  color: #111111;
-  font-size: 0.9rem;
-}
-
-.catalogLink {
+.rodapeLinkCatalogo {
   position: relative;
   padding: 8px 0;
   color: #111111;
@@ -44,7 +38,7 @@
   text-decoration: none;
 }
 
-.catalogLink::after {
+.rodapeLinkCatalogo::after {
   position: absolute;
   right: 0;
   bottom: 2px;
@@ -57,37 +51,36 @@
   transition: transform 160ms ease;
 }
 
-.catalogLink:hover::after,
-.catalogLink:focus-visible::after {
+.rodapeLinkCatalogo:hover::after,
+.rodapeLinkCatalogo:focus-visible::after {
   transform: scaleX(1);
 }
 
-.logo:focus-visible,
-.catalogLink:focus-visible {
+.rodapeLogo:focus-visible,
+.rodapeLinkCatalogo:focus-visible {
   outline: 2px solid #ff4f00;
   outline-offset: 4px;
 }
 
 @media (max-width: 560px) {
-  .inner {
+  .rodapeInterno {
     width: min(100% - 32px, 1200px);
     min-height: 84px;
   }
 
-  .brandBlock {
+  .rodapeMarca {
     align-items: flex-start;
     flex-direction: column;
     gap: 5px;
   }
 
-  .description,
-  .catalogLink {
+  .rodapeLinkCatalogo {
     font-size: 0.82rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .catalogLink::after {
+  .rodapeLinkCatalogo::after {
     transition: none;
   }
 }

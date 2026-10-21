@@ -1,19 +1,19 @@
 import Link from 'next/link';
-import styles from './header.module.css';
+import './header.css';
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <div className={styles.inner}>
-        <Link className={styles.logo} href="/" aria-label="Still Running, início">
+    <header className="cabecalho">
+      <div className="cabecalhoInterno">
+        <Link className="cabecalhoLogo" href="/" aria-label="Still Running, início">
           STILL RUNNING
         </Link>
 
-        <nav className={styles.navigation} aria-label="Navegação principal">
-          <Link className={`${styles.link} ${styles.current}`} href="/#catalogo" aria-current="page">
+        <nav className="cabecalhoNavegacao" aria-label="Navegação principal">
+          <Link className="cabecalhoLink cabecalhoLinkAtual" href="/#catalogo" aria-current="page">
             Catálogo
           </Link>
-          <Link className={styles.action} href="/tenis/novo">
+          <Link className="cabecalhoAcao" href="/tenis/novo">
             Adicionar tênis
           </Link>
         </nav>

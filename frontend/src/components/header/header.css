@@ -1,10 +1,10 @@
-.header {
+.cabecalho {
   width: 100%;
   background: #ffffff;
   border-bottom: 1px solid #111111;
 }
 
-.inner {
+.cabecalhoInterno {
   width: min(100% - 48px, 1200px);
   min-height: 82px;
   margin: 0 auto;
@@ -14,7 +14,7 @@
   gap: 28px;
 }
 
-.logo {
+.cabecalhoLogo {
   color: #ff4f00;
   font-size: 1.25rem;
   font-weight: 900;
@@ -24,13 +24,13 @@
   white-space: nowrap;
 }
 
-.navigation {
+.cabecalhoNavegacao {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.link {
+.cabecalhoLink {
   position: relative;
   padding: 10px 0;
   color: #111111;
@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 
-.link::after {
+.cabecalhoLink::after {
   position: absolute;
   right: 0;
   bottom: 3px;
@@ -52,13 +52,13 @@
   transition: transform 160ms ease;
 }
 
-.link:hover::after,
-.link:focus-visible::after,
-.current::after {
+.cabecalhoLink:hover::after,
+.cabecalhoLink:focus-visible::after,
+.cabecalhoLinkAtual::after {
   transform: scaleX(1);
 }
 
-.action {
+.cabecalhoAcao {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -73,14 +73,14 @@
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.action:hover {
+.cabecalhoAcao:hover {
   background: #111111;
   color: #ffffff;
 }
 
-.logo:focus-visible,
-.link:focus-visible,
-.action:focus-visible {
+.cabecalhoLogo:focus-visible,
+.cabecalhoLink:focus-visible,
+.cabecalhoAcao:focus-visible {
   outline: 2px solid #ff4f00;
   outline-offset: 4px;
 }
